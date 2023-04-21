@@ -25,7 +25,7 @@ export function CanvasWrapper() {
 
   return (
     <>
-      <Leva flat />
+      <Leva flat collapsed />
       <Canvas
         style={{
           height: "100%",
