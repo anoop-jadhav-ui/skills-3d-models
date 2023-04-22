@@ -4,7 +4,7 @@ import { GroupProps, useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
 import { useEffect, useMemo, useRef, useTransition } from "react";
 import { Group, Material, MeshPhysicalMaterial } from "three";
-import { CubeFloat } from "./ModelAnimationUtils";
+import { CubeFloat } from "./AnimationUtils";
 import { color } from "./materials";
 
 interface SubModelProps {
@@ -607,13 +607,13 @@ export const Model = (props: GroupProps) => {
     });
   });
 
-  useFrame(({ clock }) => {
-    startTransition(() => {
-      if (groupRef.current)
-        groupRef.current.rotation.y =
-          Math.sin(clock.getElapsedTime() / 2) + Math.PI / 6;
-    });
-  });
+  // useFrame(({ clock }) => {
+  //   startTransition(() => {
+  //     if (groupRef.current)
+  //       groupRef.current.rotation.y =
+  //         Math.sin(clock.getElapsedTime() / 2) + Math.PI / 6;
+  //   });
+  // });
 
   return (
     <animated.group

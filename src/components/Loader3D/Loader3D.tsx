@@ -1,7 +1,7 @@
 import { animated } from "@react-spring/three";
 import { Html, useProgress } from "@react-three/drei";
 import { useControls } from "leva";
-import { color } from "../Summary/Model/materials";
+import { color } from "../Portfolio/Model/materials";
 
 function Loader3D() {
   const { progress } = useProgress();

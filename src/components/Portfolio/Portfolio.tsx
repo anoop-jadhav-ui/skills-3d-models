@@ -5,10 +5,11 @@ import { Suspense } from "react";
 import Loader3D from "../Loader3D/Loader3D";
 import { Model } from "./Model/Model";
 
-export function CanvasWrapper() {
+export function Portfolio() {
   const canvasColor = useControls("Canvas Color", {
     color: "#fce3e8",
   });
+
   const ambientLight = useControls("AmbientLight", {
     intensity: 0.1,
   });

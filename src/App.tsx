@@ -1,13 +1,13 @@
 import { Globals } from "@react-spring/three";
 import "./App.css";
-import { CanvasWrapper } from "./components/Summary/CanvasWrapper";
+import { Portfolio } from "./components/Portfolio/Portfolio";
 
 Globals.assign({
   frameLoop: "always",
 });
 
 function App() {
-  return <CanvasWrapper />;
+  return <Portfolio />;
 }
 
 export default App;
