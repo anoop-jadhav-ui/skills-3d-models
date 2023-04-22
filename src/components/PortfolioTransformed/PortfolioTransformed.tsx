@@ -3,9 +3,9 @@ import { Canvas } from "@react-three/fiber";
 import { Leva, useControls } from "leva";
 import { Suspense } from "react";
 import Loader3D from "../Loader3D/Loader3D";
-import { Model } from "./Model/Model";
+import { Model } from "./Model";
 
-export function Portfolio() {
+export function PortfolioTransformed() {
   const canvasColor = useControls("Canvas Color", {
     color: "#fce3e8",
   });
