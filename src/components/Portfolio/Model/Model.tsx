@@ -1,6 +1,6 @@
 import { animated, useSpring } from "@react-spring/three";
 import { Float, useGLTF, useProgress } from "@react-three/drei";
-import { GroupProps, useFrame } from "@react-three/fiber";
+import { GroupProps } from "@react-three/fiber";
 import { useControls } from "leva";
 import { useEffect, useMemo, useRef, useTransition } from "react";
 import { Group, Material, MeshPhysicalMaterial } from "three";
