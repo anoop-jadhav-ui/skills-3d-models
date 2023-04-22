@@ -43,24 +43,28 @@ const Dropper = ({ nodes }: SubModelProps) => {
       floatIntensity={1}
       speed={floatSpeed}
     >
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.dropper_1.geometry}
-        material={glassMaterial}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.dropper_2.geometry}
-        material={dropperHolderMaterial}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.dropperFluid.geometry}
-        material={dropperLiquidMaterial}
-      />
+      <group position={[-1.47, 3.2, 0.13]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.dropper_1.geometry}
+          material={glassMaterial}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.dropper_2.geometry}
+          material={dropperHolderMaterial}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.dropperFluid.geometry}
+          material={dropperLiquidMaterial}
+          position={[0.41, -0.55, 0.23]}
+          scale={0.95}
+        />
+      </group>
     </Float>
   );
 };

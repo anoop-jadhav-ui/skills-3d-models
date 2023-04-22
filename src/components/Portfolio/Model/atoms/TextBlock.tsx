@@ -1,7 +1,7 @@
 import { useControls } from "leva";
 import { MeshPhysicalMaterial } from "three";
-import { SubModelProps } from "../Model";
 import { color } from "../materials";
+import { SubModelProps } from "../Model";
 
 const TextBlock = ({ nodes, materials }: SubModelProps) => {
   const { red, blue } = useControls("TextBlock", {
@@ -20,18 +20,20 @@ const TextBlock = ({ nodes, materials }: SubModelProps) => {
 
   return (
     <>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.textBlocks_1.geometry}
-        material={redMaterial}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.textBlocks_2.geometry}
-        material={blueMaterial}
-      />
+      <group position={[0, -0.02, 0]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.textBlocks_1.geometry}
+          material={redMaterial}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.textBlocks_2.geometry}
+          material={blueMaterial}
+        />
+      </group>
       <mesh
         castShadow
         receiveShadow
