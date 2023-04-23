@@ -4,12 +4,12 @@ Command: npx gltfjsx@6.1.4 --types ./public/loadingCube.glb --transform -s
 */
 
 import { Html, useGLTF, useProgress } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
+import { useRef, useTransition } from "react";
 import * as THREE from "three";
 import { GLTF } from "three-stdlib";
 import { color } from "../Portfolio/Model/materials";
-import { useFrame } from "@react-three/fiber";
-import { useRef, useTransition } from "react";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -54,6 +54,7 @@ export function LoadingCube(props: JSX.IntrinsicElements["group"]) {
         scale={0.5}
         rotation={[Math.PI / 2, Math.PI / 4, 0]}
       />
+
       <Html
         as="div"
         role="progressbar"

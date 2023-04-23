@@ -26,7 +26,7 @@ export function Portfolio() {
 
   return (
     <>
-      <Leva flat collapsed />
+      <Leva collapsed />
       <Canvas
         style={{
           height: "100%",
