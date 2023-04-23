@@ -1,9 +1,9 @@
 import { OrbitControls, PresentationControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Leva, useControls } from "leva";
-import { Suspense } from "react";
-import Loader3D from "../Loader3D/Loader3D";
 import { Model } from "./Model/Model";
+import { Suspense } from "react";
+import { LoadingCube } from "../Loader3D/LoadingCube";
 
 export function Portfolio() {
   const canvasColor = useControls("Canvas Color", {
@@ -56,11 +56,11 @@ export function Portfolio() {
           />
           <directionalLight {...directionalLight} />
           <ambientLight intensity={ambientLight.intensity} />
-          <Suspense fallback={<Loader3D />}>
+          <Suspense fallback={<LoadingCube />}>
             <Model />
-            <axesHelper args={[5]} />
-            <OrbitControls />
           </Suspense>
+          {/* <axesHelper args={[5]} /> */}
+          <OrbitControls />
         </PresentationControls>
       </Canvas>
     </>
