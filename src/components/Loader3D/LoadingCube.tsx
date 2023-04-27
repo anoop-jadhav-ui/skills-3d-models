@@ -49,8 +49,8 @@ export function LoadingCube(props: JSX.IntrinsicElements["group"]) {
       >
         <meshBasicMaterial>
           <GradientTexture
-            stops={[0, 0.33, 1]} // As many stops as you want
-            colors={["aquamarine", "hotpink", "aquamarine"]} // Colors need to match the number of stops
+            stops={[0, 0.4, 1]} // As many stops as you want
+            colors={[color.PEN_RED, color.BACKGROUND, color.PEN_RED]} // Colors need to match the number of stops
           />
         </meshBasicMaterial>
       </mesh>

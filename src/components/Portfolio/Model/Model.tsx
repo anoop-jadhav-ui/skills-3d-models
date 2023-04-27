@@ -105,8 +105,9 @@ export const Model = (props: GroupProps) => {
   });
 
   const [, startTransition] = useTransition();
-
   const { progress } = useProgress();
+  const groupRef = useRef<Group>(null);
+
   const [springs, api] = useSpring(() => ({
     scale: 0,
     rotation: 0,
@@ -115,8 +116,6 @@ export const Model = (props: GroupProps) => {
       friction: 35,
     },
   }));
-
-  const groupRef = useRef<Group>(null);
 
   useEffect(() => {
     startTransition(() => {
@@ -140,10 +139,10 @@ export const Model = (props: GroupProps) => {
     <animated.group
       {...props}
       dispose={null}
-      scale={springs.scale}
       position={modelPosition}
       rotation={modelRotation}
       ref={groupRef}
+      scale={springs.scale}
     >
       <TrackPad nodes={nodes} materials={materials} />
       <TextBlock nodes={nodes} materials={materials} />
