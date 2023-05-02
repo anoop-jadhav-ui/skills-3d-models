@@ -38,7 +38,7 @@ export function Portfolio() {
           state.gl.setClearColor(canvasColor.color);
         }}
       >
-        <Stage environment="city" shadows={false} adjustCamera={false}>
+        <Stage environment="park" shadows={false} adjustCamera={false}>
           <PresentationControls
             snap
             global
