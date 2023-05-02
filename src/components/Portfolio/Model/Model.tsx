@@ -1,3 +1,4 @@
+import React from "react";
 import { animated, useSpring } from "@react-spring/three";
 import { useGLTF, useProgress } from "@react-three/drei";
 import { GroupProps } from "@react-three/fiber";
@@ -5,17 +6,18 @@ import { useControls } from "leva";
 import { useEffect, useRef, useTransition } from "react";
 import { Group, Material } from "three";
 import { GLTF } from "three-stdlib";
-import Background from "./atoms/Background";
-import Bulb from "./atoms/Bulb";
-import ColorCards from "./atoms/ColorCards";
-import Cubes from "./atoms/Cubes";
-import Dropper from "./atoms/Dropper";
-import LatteCup from "./atoms/LatteCup";
-import Monitor from "./atoms/Monitor";
-import NoteBook from "./atoms/Notebook";
-import Pen from "./atoms/Pen";
-import TextBlock from "./atoms/TextBlock";
-import TrackPad from "./atoms/TrackPad";
+
+const Background = React.lazy(() => import("./atoms/Background"));
+const Bulb = React.lazy(() => import("./atoms/Bulb"));
+const ColorCards = React.lazy(() => import("./atoms/ColorCards"));
+const Cubes = React.lazy(() => import("./atoms/Cubes"));
+const Dropper = React.lazy(() => import("./atoms/Dropper"));
+const LatteCup = React.lazy(() => import("./atoms/LatteCup"));
+const Monitor = React.lazy(() => import("./atoms/Monitor"));
+const NoteBook = React.lazy(() => import("./atoms/Notebook"));
+const Pen = React.lazy(() => import("./atoms/Pen"));
+const TrackPad = React.lazy(() => import("./atoms/TrackPad"));
+const TextBlock = React.lazy(() => import("./atoms/TextBlock"));
 
 export interface SubModelProps {
   materials: {
@@ -94,7 +96,7 @@ type GLTFResult = GLTF & {
   };
 };
 
-export const Model = (props: GroupProps) => {
+const Model = (props: GroupProps) => {
   const { nodes, materials } = useGLTF(
     "/portfolio-transformed.glb"
   ) as GLTFResult;
@@ -160,3 +162,4 @@ export const Model = (props: GroupProps) => {
 };
 
 useGLTF.preload("/portfolio-transformed.glb");
+export default Model;

@@ -4,7 +4,9 @@ import { Canvas } from "@react-three/fiber";
 import { Leva, useControls } from "leva";
 import { Suspense } from "react";
 import { LoadingCube } from "../Loader3D/LoadingCube";
-import { Model } from "./Model/Model";
+import React from "react";
+
+const Model = React.lazy(() => import("./Model/Model"));
 
 Globals.assign({
   frameLoop: "always",
@@ -14,20 +16,6 @@ export function Portfolio() {
   const canvasColor = useControls("Canvas Color", {
     color: "#fce3e8",
   });
-
-  // const ambientLight = useControls("AmbientLight", {
-  //   intensity: 0.1,
-  // });
-
-  // const directionalLight = useControls("Directional Light", {
-  //   color: "#6394de",
-  //   intensity: 1,
-  // });
-
-  // const hemisphereLight = useControls("Hemisphere Light", {
-  //   color1: "#ffeded",
-  //   color2: "#a275ce",
-  // });
 
   return (
     <>
@@ -44,19 +32,12 @@ export function Portfolio() {
         }}
         frameloop="always"
         dpr={window?.devicePixelRatio}
-        flat
         camera={{ fov: 25, position: [0, 0, 25] }}
+        flat
         onCreated={(state) => {
           state.gl.setClearColor(canvasColor.color);
         }}
-        shadows
       >
-        {/* <color attach="background" args={[canvasColor.color]} /> */}
-        {/* <hemisphereLight
-          args={[hemisphereLight.color1, hemisphereLight.color2, 1]}
-        /> */}
-        {/* <directionalLight {...directionalLight} /> */}
-        {/* <ambientLight intensity={ambientLight.intensity} /> */}
         <Stage environment="city" shadows={false} adjustCamera={false}>
           <PresentationControls
             snap
@@ -72,7 +53,6 @@ export function Portfolio() {
             </Suspense>
           </PresentationControls>
         </Stage>
-        {/* <Perf position="top-left" /> */}
       </Canvas>
     </>
   );
