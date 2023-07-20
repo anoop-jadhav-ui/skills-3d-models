@@ -1,9 +1,8 @@
 import "./App.css";
-
-import { Portfolio } from "./components/Portfolio/Portfolio";
+import Skills3D from "./components/Skills3D/Skills3D";
 
 function App() {
-  return <Portfolio />;
+  return <Skills3D />;
 }
 
 export default App;
