@@ -12,7 +12,7 @@ const BlenderModel = React.lazy(() => import("../3DModels/BlenderModel"));
 const Skills3D = () => {
   return (
     <>
-      <h2 className="section-title">Skills</h2>
+      <h1 className="section-title">Tech Skills</h1>
       <div className="subsection skills-content">
         <div className="skills-3d-grid">
           <Suspense fallback={<Loader />}>
